@@ -24,9 +24,9 @@ export class DeepLApi {
     text: string,
     targetLanguage: string
   ): Promise<string | null> {
-    return this.axiosInstance.post({
-      url: "/translate",
-      data: qs.stringify({
+    return this.axiosInstance.post(
+      "/translate",
+      {
         text:
           // Before sending the text to the DeepL API,
           // replace special syntax parts with ignore tags to keep them
@@ -78,11 +78,11 @@ export class DeepLApi {
         target_lang: targetLanguage.toUpperCase(),
         tag_handling: "xml",
         ignore_tags: "emoji,mrkdwn,ignore",
-      }),
+      },
       headers: {
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",
       },
-    })
+    )
       .then((response) => {
         this.logger.debug(response.data);
         if (
