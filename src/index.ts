@@ -94,7 +94,7 @@ app.event("reaction_added", async ({ body, client }) => {
   if (replies.messages && replies.messages.length > 0) {
     const message = replies.messages[0];
     if (message.text) {
-      const translatedText = await deepL.translate("Ver.1.2" + message.text, lang);
+      const translatedText = await deepL.translate("Ver.1.3" + message.text, lang);
       if (translatedText == null) {
         return;
       }
