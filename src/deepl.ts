@@ -14,6 +14,9 @@ export class DeepLApi {
     this.axiosInstance = axios.create({
       baseURL: `https://${apiSubdomain}.deepl.com/v2`,
       timeout: 30000,
+      headers: {
+        "Authorization" : "DeepL-Auth-Key " + auth-key
+      },
     });
   }
 
@@ -24,7 +27,6 @@ export class DeepLApi {
     return this.axiosInstance({
       url: "/translate",
       data: qs.stringify({
-        auth_key: this.authKey,
         text:
           // Before sending the text to the DeepL API,
           // replace special syntax parts with ignore tags to keep them
