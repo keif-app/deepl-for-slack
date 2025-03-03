@@ -15,7 +15,7 @@ export class DeepLApi {
       baseURL: `https://${apiSubdomain}.deepl.com/v2`,
       timeout: 30000,
       headers: {
-        "Authorization" : "DeepL-Auth-Key " + authkey
+        "Authorization" : "DeepL-Auth-Key " + authKey
       },
     });
   }
