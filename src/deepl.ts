@@ -24,7 +24,7 @@ export class DeepLApi {
     return this.axiosInstance({
       url: "/translate",
       data: qs.stringify({
-        Authorization: "DeepL-Auth-Key " + this.authKey,
+        auth_key: this.authKey,
         text:
           // Before sending the text to the DeepL API,
           // replace special syntax parts with ignore tags to keep them
