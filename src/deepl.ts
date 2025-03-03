@@ -15,7 +15,8 @@ export class DeepLApi {
       baseURL: `https://${apiSubdomain}.deepl.com/v2`,
       timeout: 30000,
       headers: {
-        "Authorization" : "DeepL-Auth-Key " + authKey
+        "Authorization" : "DeepL-Auth-Key " + authKey,
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8"
       },
     });
   }
@@ -78,10 +79,7 @@ export class DeepLApi {
         target_lang: targetLanguage.toUpperCase(),
         tag_handling: "xml",
         ignore_tags: "emoji,mrkdwn,ignore",
-      },
-      headers: {
-        "content-type": "application/x-www-form-urlencoded;charset=utf-8",
-      },
+      }
     )
       .then((response) => {
         this.logger.debug(response.data);
