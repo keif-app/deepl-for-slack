@@ -14,6 +14,9 @@ export class DeepLApi {
     this.axiosInstance = axios.create({
       baseURL: `https://${apiSubdomain}.deepl.com/v2`,
       timeout: 30000,
+      headers: {
+        "Authorization" : "DeepL-Auth-Key " + authKey
+      },
     });
   }
 
@@ -78,7 +81,6 @@ export class DeepLApi {
       }),
       headers: {
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",
-        "Authorization" : "DeepL-Auth-Key " + this.authKey
       },
     })
       .then((response) => {
