@@ -10,7 +10,10 @@
     "build": "tsc -p .",
     "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts"
   },
-  "author": "Kazuhiro Sera (@seratch)",
+  "author": "fukuda",
+  "engines": {
+   "node": "24.x"
+  },
   "license": "MIT",
   "dependencies": {
     "@slack/bolt": "^3.21.2",
